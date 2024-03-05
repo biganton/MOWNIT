@@ -66,7 +66,7 @@ x0 = 1
 
 for h in h_values:
     rounding_errors.append(np.finfo(float).eps / h)
-    truncation_errors.append(find_maximum(np.tan, (x0 - h, x0 + h)) * h * h / 6)
+    truncation_errors.append(find_maximum(np.tan, (x0 - h, x0 + h)) * h ** 2 / 6)
     computational_errors.append(abs(real_d_f(np.tan) - d_f_central(np.tan, h, x0)))
 
 plt.figure(figsize=(10, 6))
