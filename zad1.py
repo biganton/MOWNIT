@@ -1,5 +1,5 @@
 import numpy as np
-import matplotlib
+import matplotlib.pyplot as plt
 from scipy.optimize import minimize_scalar
 
 
@@ -33,3 +33,15 @@ for h in h_values:
     computational_errors.append(abs(real_d_f(np.tan) - d_f(np.tan, h)))
 
 
+
+# Plotting the errors
+plt.figure(figsize=(10, 6))
+plt.loglog(h_values, rounding_errors, label='Rounding Errors', marker='o')
+plt.loglog(h_values, truncation_errors, label='Truncation Errors', marker='^')
+plt.loglog(h_values, computational_errors, label='Computational Errors', marker='s')
+plt.xlabel('h value')
+plt.ylabel('Error magnitude')
+plt.title('Rounding, Truncation, and Computational Errors')
+plt.legend()
+plt.grid(True, which="both", ls="--")
+plt.show()
