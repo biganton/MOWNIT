@@ -59,6 +59,8 @@ for i in range(255):
     if i < n_double: double_relative_errors.append(abs(x_double_tab[i] - x_real) / x_real)
     if i < n_fraction: fraction_relative_errors.append(abs(x_fraction_tab[i] - x_real) / x_real)
 
+print(fraction_relative_errors)
+
 plt.figure(figsize=(10, 6))
 plt.semilogy(np.arange(n_single), single_relative_errors, label='Single precision')
 plt.semilogy(np.arange(n_double), double_relative_errors, label='Double precision')
