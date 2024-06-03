@@ -1,2 +1,1 @@
-# MOWNIT
-Metody obliczeniowe w nauce i technice
+# Computation Methods For Science And Technology
